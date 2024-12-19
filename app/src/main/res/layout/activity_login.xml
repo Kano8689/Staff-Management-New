@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".Login">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="120dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Login"
+        android:textColor="@color/black"
+        android:textSize="30dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="230dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Email:"
+        android:layout_marginHorizontal="10dp"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textInputLayout3"
+        android:layout_alignBottom="@+id/textInputLayout3"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="-80dp"
+        android:hint="Password:"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pswdEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/forgotLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textInputLayout4"
+        android:layout_alignBottom="@+id/textInputLayout4"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="-50dp"
+        android:background="@android:color/transparent"
+
+        android:textAlignment="viewEnd"
+        android:paddingEnd="12dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Forgot your password?"
+        android:textColor="#7D7E7E"
+        android:textSize="16.5dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/forgotLink"
+        android:layout_alignBottom="@+id/forgotLink"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="-60dp"
+        android:background="#FFFF00"
+        android:layout_marginHorizontal="70dp"
+        android:textAlignment="center"
+        android:fontFamily="sans-serif-medium"
+        android:text="Login"
+        android:textColor="@color/black"
+        android:textSize="25dp"/>
+
+    <Button
+        android:id="@+id/signUpLink"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/forgotLink"
+        android:layout_alignBottom="@+id/forgotLink"
+        android:layout_marginTop="110dp"
+        android:layout_marginBottom="-110dp"
+        android:background="@android:color/transparent"
+
+        android:textAlignment="center"
+        android:paddingEnd="12dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Don't have an account? Register"
+        android:textColor="#7D7E7E"
+        android:textSize="16.5dp"/>
+
+</RelativeLayout>

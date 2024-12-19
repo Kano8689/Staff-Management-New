@@ -1,6 +1,7 @@
 package com.example.staffmanagement
 
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -33,7 +34,15 @@ class MainActivity : AppCompatActivity()
         val loadingAnim = LoadingAnimation(
             this,_process, textView, 0F, 100F,
         )
-        loadingAnim.duration = 8000
+        loadingAnim.duration = 3000
         _process.animation = loadingAnim
+
+        val _logo = findViewById<ImageView>(R.id.splashLogo)
+        val logoAnim = LoadingImage(
+            _logo, 0.3f,1f,0.5f,1f,0,360
+        )
+        logoAnim.duration = 2000
+        _logo.animation = logoAnim
+
     }
 }
