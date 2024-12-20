@@ -21,7 +21,7 @@
         android:textSize="30dp" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/emailEnter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="230dp"
@@ -35,15 +35,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="250dp" />
-
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout4"
+        android:id="@+id/pswdEnter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textInputLayout3"
-        android:layout_alignBottom="@+id/textInputLayout3"
+        android:layout_alignTop="@+id/emailEnter"
+        android:layout_alignBottom="@+id/emailEnter"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="-80dp"
@@ -55,56 +54,87 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="250dp" />
-
     </com.google.android.material.textfield.TextInputLayout>
+
 
     <Button
         android:id="@+id/forgotLink"
-        android:layout_width="match_parent"
+        android:layout_width="500dp"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/textInputLayout4"
-        android:layout_alignBottom="@+id/textInputLayout4"
+        android:layout_alignTop="@+id/pswdEnter"
+        android:layout_alignBottom="@+id/pswdEnter"
+        android:layout_alignParentEnd="true"
+        android:layout_marginLeft="190sp"
         android:layout_marginTop="70dp"
         android:layout_marginBottom="-50dp"
         android:background="@android:color/transparent"
 
         android:textAlignment="viewEnd"
-        android:paddingEnd="12dp"
         android:fontFamily="sans-serif-medium"
         android:text="Forgot your password?"
         android:textColor="#7D7E7E"
         android:textSize="16.5dp"/>
 
     <Button
+        android:id="@+id/loginBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/forgotLink"
         android:layout_alignBottom="@+id/forgotLink"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="-60dp"
-        android:background="#FFFF00"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="-75dp"
         android:layout_marginHorizontal="70dp"
         android:textAlignment="center"
         android:fontFamily="sans-serif-medium"
         android:text="Login"
-        android:textColor="@color/black"
+        android:backgroundTint="#EBA208"
+        android:textColor="#0A2241"
         android:textSize="25dp"/>
 
     <Button
-        android:id="@+id/signUpLink"
+        android:id="@+id/registrTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/forgotLink"
-        android:layout_alignBottom="@+id/forgotLink"
-        android:layout_marginTop="110dp"
-        android:layout_marginBottom="-110dp"
+        android:layout_weight="1"
+        android:layout_alignTop="@+id/loginBtn"
+        android:layout_alignBottom="@+id/loginBtn"
         android:background="@android:color/transparent"
-
-        android:textAlignment="center"
-        android:paddingEnd="12dp"
-        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="-40dp"
+        android:layout_marginHorizontal="80dp"
         android:text="Don't have an account? Register"
+        android:textAlignment="center"
         android:textColor="#7D7E7E"
-        android:textSize="16.5dp"/>
+        android:textSize="13dp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="50dp"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/googleLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:foreground="@drawable/google" />
+
+        <Button
+            android:id="@+id/faceBookLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10sp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:foreground="@drawable/facebook" />
+    </LinearLayout>
 
 </RelativeLayout>
