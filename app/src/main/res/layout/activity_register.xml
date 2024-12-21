@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".Login">
+    tools:context=".Register">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,7 +16,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="100dp"
         android:fontFamily="sans-serif-medium"
-        android:text="Login"
+        android:text="Register"
         android:textColor="@color/black"
         android:textSize="30dp" />
 
@@ -40,14 +40,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/usernameEnter"
+        android:id="@+id/compnyName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/domainEnter"
         android:layout_alignBottom="@+id/domainEnter"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="-80dp"
-        android:hint="Username:"
+        android:hint="Organization Name:"
         android:layout_marginHorizontal="10dp"
         app:endIconMode="clear_text">
 
@@ -62,8 +62,8 @@
         android:id="@+id/pswdEnter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/usernameEnter"
-        android:layout_alignBottom="@+id/usernameEnter"
+        android:layout_alignTop="@+id/compnyName"
+        android:layout_alignBottom="@+id/compnyName"
         android:layout_marginHorizontal="10dp"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="-80dp"
@@ -77,36 +77,37 @@
             android:layout_marginTop="250dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-
-    <Button
-        android:id="@+id/forgotLink"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cnfmPswdEnter"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/pswdEnter"
         android:layout_alignBottom="@+id/pswdEnter"
-        android:layout_alignParentEnd="true"
-        android:layout_marginEnd="15sp"
+        android:layout_marginHorizontal="10dp"
         android:layout_marginTop="80dp"
-        android:layout_marginBottom="-70dp"
-        android:background="@android:color/transparent"
-        android:textAlignment="viewEnd"
-        android:fontFamily="sans-serif-medium"
-        android:text="Forgot your password?"
-        android:textColor="#7D7E7E"
-        android:textSize="16.5dp"/>
+        android:layout_marginBottom="-80dp"
+        android:hint="Confirm Password:"
+        app:endIconMode="clear_text">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cnfmPswdEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/loginBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/pswdEnter"
-        android:layout_alignBottom="@+id/pswdEnter"
-        android:layout_marginTop="170dp"
-        android:layout_marginBottom="-170dp"
+        android:layout_alignTop="@+id/cnfmPswdEnter"
+        android:layout_alignBottom="@+id/cnfmPswdEnter"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="-140dp"
         android:layout_marginHorizontal="80dp"
         android:textAlignment="center"
         android:fontFamily="sans-serif-medium"
-        android:text="Login"
+        android:text="Register"
         android:backgroundTint="#EBA208"
         android:textColor="#0A2241"
         android:textSize="25dp"/>
@@ -123,19 +124,19 @@
         android:layout_marginBottom="-70dp"
         android:layout_centerHorizontal="true"
         android:layout_marginHorizontal="70dp"
-        android:text="Don't have an account?\nCreatean account"
+        android:text="Already have an account?\nLogin here"
         android:textAlignment="center"
         android:textColor="#7D7E7E"
         android:textSize="15dp"
         android:textStyle="bold" />
 
-    <!--<LinearLayout
+   <!-- <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="0dp"
-        android:layout_marginBottom="150dp"
+        android:layout_marginBottom="130dp"
         android:orientation="horizontal"
         android:padding="16dp">
 

@@ -19,7 +19,7 @@ class LoadingAnimation(
         super.applyTransformation(interpolatedTime, t)
         var _value = _from + (_to - _from) * interpolatedTime
         _progress.progress = _value.toInt()
-        _textView.text = "Loading.. ${_value.toInt()} %"
+        _textView.text = "Loading.. ${_value.toInt()}%"
 
         if(_value==_to)
         {

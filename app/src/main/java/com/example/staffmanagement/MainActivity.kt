@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity()
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
         val _process = findViewById<ProgressBar>(R.id.loadingSlider)
@@ -29,8 +30,10 @@ class MainActivity : AppCompatActivity()
         params.width = width90Percent
         _process.layoutParams = params
 
+        var _scaleLoad:Float = 1.5f
         _process.max = 100
-        _process.scaleY = 3f
+        _process.scaleY = _scaleLoad
+        _process.scaleX = _scaleLoad
         val loadingAnim = LoadingAnimation(
             this,_process, textView, 0F, 100F,
         )
