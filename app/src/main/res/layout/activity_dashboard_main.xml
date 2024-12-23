@@ -12,144 +12,236 @@
         android:id="@+id/bg_white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/white"
+        android:background="#000000"
         android:layout_marginTop="150dp"/>
 
-    <!-- Row 1 -->
-    <!-- LinearLayoutCompat container that will hold all the LinearLayouts -->
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/btnss"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginBottom="80dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- First Row -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="horizontal">
 
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/opt1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="#ffffff"/>
             <Button
                 android:id="@+id/button1"
-                android:layout_width="0dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="top|center_horizontal"/>
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Item 1" />
+                android:textAlignment="center"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="Project Task"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginHorizontal="30dp"
+                android:textStyle="bold"
+                android:textColor="#0A2241"
+                android:layout_marginBottom="20sp"
+                android:textSize="23sp" />
+        </FrameLayout>
 
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/opt2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="#ffffff" />
             <Button
                 android:id="@+id/button2"
-                android:layout_width="0dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="top|center_horizontal"/>
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Item 2" />
-        </LinearLayout>
+                android:textAlignment="center"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="Daily Report"
+                android:layout_marginHorizontal="30dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="25sp"
+                android:textSize="23sp" />
+        </FrameLayout>
 
-        <!-- Second Row -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal">
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/opt3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="#ffffff" />
             <Button
                 android:id="@+id/button3"
-                android:layout_width="0dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="top|center_horizontal"/>
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Item 3" />
+                android:textAlignment="center"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="Attedence"
+                android:layout_marginHorizontal="30dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="25sp"
+                android:textSize="23sp" />
+        </FrameLayout>
 
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/opt4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="#ffffff" />
             <Button
                 android:id="@+id/button4"
-                android:layout_width="0dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="top|center_horizontal"/>
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Item 4" />
-        </LinearLayout>
+                android:textAlignment="center"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="Leaves"
+                android:layout_marginHorizontal="30dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="25sp"
+                android:textSize="23sp" />
+        </FrameLayout>
 
-        <!-- Third Row -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:orientation="horizontal">
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/opt5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="#ffffff" />
             <Button
                 android:id="@+id/button5"
-                android:layout_width="0dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="top|center_horizontal"/>
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Item 5" />
+                android:textAlignment="center"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="Salary Details"
+                android:layout_marginHorizontal="25dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="25sp"
+                android:textSize="23sp" />
+        </FrameLayout>
 
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/opt6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="7dp"
+                android:background="#ffffff" />
             <Button
                 android:id="@+id/button6"
-                android:layout_width="0dp"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="top|center_horizontal"/>
+            <TextView
+                android:id="@+id/text6"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Item 6" />
-        </LinearLayout>
+                android:textAlignment="center"
+                android:layout_gravity="bottom|center_horizontal"
+                android:text="Team Member"
+                android:layout_marginHorizontal="25dp"
+                android:textStyle="bold"
+                android:textColor="#000000"
+                android:layout_marginBottom="25sp"
+                android:textSize="23sp" />
+        </FrameLayout>
+
+    </LinearLayout>
+
     </androidx.appcompat.widget.LinearLayoutCompat>
-
-<!--    &lt;!&ndash; Row 2 &ndash;&gt;-->
-<!--    <androidx.appcompat.widget.LinearLayoutCompat-->
-<!--        android:id="@+id/row2"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/row1"-->
-<!--        android:weightSum="2">-->
-
-<!--        <Button-->
-<!--            android:id="@+id/button3"-->
-<!--            android:layout_width="0dp"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"-->
-<!--            android:text="Item 3" />-->
-
-<!--        <Button-->
-<!--            android:id="@+id/button4"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:text="Item 4" />-->
-<!--    </androidx.appcompat.widget.LinearLayoutCompat>-->
-
-<!--    &lt;!&ndash; Row 3 &ndash;&gt;-->
-<!--    <androidx.appcompat.widget.LinearLayoutCompat-->
-<!--        android:id="@+id/row3"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/row2"-->
-<!--        android:weightSum="2">-->
-
-<!--        <Button-->
-<!--            android:id="@+id/button5"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"-->
-<!--            android:text="Item 5" />-->
-
-<!--        <Button-->
-<!--            android:id="@+id/button6"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_weight="1"-->
-<!--            android:text="Item 6" />-->
-<!--    </androidx.appcompat.widget.LinearLayoutCompat>-->
-
 </androidx.constraintlayout.widget.ConstraintLayout>
