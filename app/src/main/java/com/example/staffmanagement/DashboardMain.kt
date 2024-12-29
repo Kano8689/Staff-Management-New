@@ -3,12 +3,11 @@ package com.example.staffmanagement
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class DashboardMain : AppCompatActivity() {
 
@@ -25,13 +24,13 @@ class DashboardMain : AppCompatActivity() {
         val whiteBG = findViewById<ImageView>(R.id.bg_white)
         whiteBG.background = shape
 
-        val DashboardItems: List<ImageView> = listOf(
-            findViewById(R.id.opt1),
-            findViewById(R.id.opt2),
-            findViewById(R.id.opt3),
-            findViewById(R.id.opt4),
-            findViewById(R.id.opt5),
-            findViewById(R.id.opt6)
+        val DashboardItems: List<ImageButton> = listOf(
+            findViewById(R.id.project_task),
+            findViewById(R.id.task_done),
+            findViewById(R.id.attedence),
+            findViewById(R.id.leaves),
+            findViewById(R.id.salary_detail),
+            findViewById(R.id.team)
         )
 
         DashboardItems.forEach {
