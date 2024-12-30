@@ -8,12 +8,26 @@
     tools:context=".DashboardMain"
     android:background="#0A2241">
 
+
+    <ImageButton
+        android:id="@+id/profile_pic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profilepic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.051"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.076" />
+
     <ImageView
         android:id="@+id/bg_white"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/offWhite"
-        android:layout_marginTop="150dp"/>
+        android:layout_marginTop="220dp"/>
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/btnss"
@@ -23,118 +37,62 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="180dp"
-        android:layout_marginBottom="50dp">
+        android:layout_marginTop="250dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center">
 
-        <!-- First Horizontal Row -->
-        <LinearLayout
+        <GridLayout
+            android:id="@+id/options_grid"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_margin="5dp"
-            android:gravity="center">
+            android:columnCount="2"
+            android:layout_gravity="center">
 
-            <FrameLayout
+            <ImageButton
+                android:id="@+id/project_task"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                android:src="@drawable/dash_opt_project_task"
+                android:background="@android:color/transparent"/>
+            <ImageButton
+                android:id="@+id/task_done"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                android:src="@drawable/dash_opt_task_done"
+                android:background="@android:color/transparent"/>
+            <ImageButton
+                android:id="@+id/attedence"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                android:src="@drawable/dash_opt_attendence"
+                android:background="@android:color/transparent"/>
+            <ImageButton
+                android:id="@+id/leaves"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                android:src="@drawable/dash_opt_leave"
+                android:background="@android:color/transparent"/>
+            <ImageButton
+                android:id="@+id/salary_detail"
+                android:layout_width="190dp"
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                android:src="@drawable/dash_opt_salary_detail"
+                android:background="@android:color/transparent"/>
+            <ImageButton
+                android:id="@+id/team"
                 android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1">
+                android:layout_height="190dp"
+                android:layout_gravity="center"
+                android:background="@android:color/transparent"
+                android:src="@drawable/dash_opt_team" />
 
-                <ImageButton
-                    android:id="@+id/project_task"
-                    android:layout_width="190dp"
-                    android:layout_height="190dp"
-                    android:layout_margin="7dp"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/project_task"
-                    android:layout_gravity="center"/>
-            </FrameLayout>
 
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-
-                <ImageButton
-                    android:id="@+id/attedence"
-                    android:layout_width="190dp"
-                    android:layout_height="190dp"
-                    android:layout_margin="7dp"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/attendence"
-                    android:layout_gravity="center"/>
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-
-                <ImageButton
-                    android:id="@+id/salary_detail"
-                    android:layout_width="190dp"
-                    android:layout_height="190dp"
-                    android:layout_margin="7dp"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/attendence"
-                    android:layout_gravity="center"/>
-            </FrameLayout>
-        </LinearLayout>
-
-        <!-- Second Horizontal Row -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_margin="5dp"
-            android:gravity="center">
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-
-                <ImageButton
-                    android:id="@+id/task_done"
-                    android:layout_width="190dp"
-                    android:layout_height="190dp"
-                    android:layout_margin="7dp"
-                    android:src="@drawable/task_done"
-                    android:background="@android:color/transparent"
-                    android:layout_gravity="center"/>
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-
-                <ImageButton
-                    android:id="@+id/leaves"
-                    android:layout_width="190dp"
-                    android:layout_height="190dp"
-                    android:layout_margin="7dp"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/leave"
-                    android:layout_gravity="center"/>
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-
-                <ImageButton
-                    android:id="@+id/team"
-                    android:layout_width="190dp"
-                    android:layout_height="190dp"
-                    android:layout_margin="7dp"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/team"
-                    android:layout_gravity="center"/>
-            </FrameLayout>
-        </LinearLayout>
+        </GridLayout>
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
