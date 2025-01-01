@@ -1,14 +1,22 @@
 package com.example.staffmanagement
 
+import CustomTypefaceSpan
+import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
-import android.view.Gravity
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import android.widget.*
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
+
 
 class DashboardMain : AppCompatActivity() {
+
+    lateinit var gridView:GridView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,27 +31,58 @@ class DashboardMain : AppCompatActivity() {
         val whiteBG = findViewById<ImageView>(R.id.bg_white)
         whiteBG.background = shape
 
+        //options Grid View Image Button
+        gridView = findViewById<GridView>(R.id.opt_items)
+        val optionsAdapter = OptionsAdapter(this)
+        gridView.adapter = optionsAdapter
+
+
         //profile picture
         val profilePic = findViewById<ImageButton>(R.id.profile_pic)
-
-
-
-        val DashboardItems: List<ImageButton> = listOf(
-            findViewById(R.id.project_task),
-            findViewById(R.id.task_done),
-            findViewById(R.id.attedence),
-            findViewById(R.id.leaves),
-            findViewById(R.id.salary_detail),
-            findViewById(R.id.team)
-        )
-
-        val gridLayout = GridLayout(this).apply {
-            rowCount = 3
-            columnCount = 2
-            useDefaultMargins = true
-            setPadding(16, 16, 16, 16)
-            alignmentMode = GridLayout.ALIGN_BOUNDS
-            orientation = GridLayout.HORIZONTAL
+        profilePic.setOnClickListener{
+            Toast.makeText(this,"Clicked on: Profile Picture",Toast.LENGTH_SHORT).show()
         }
+
+        val employeeName: TextView = findViewById(R.id.employee_name)
+        val name = "KASHMIRA BAVADIYA"
+        val role = "(UI/UX Designer)"
+        val fullText = "$name\n$role"
+
+        val spannable = SpannableString(fullText)
+
+        val nameFont = ResourcesCompat.getFont(this, R.font.poppins_black)
+        val roleFont = ResourcesCompat.getFont(this, R.font.poppins_bolditalic)
+
+        // Apply spans
+        spannable.setSpan(
+            ForegroundColorSpan(Color.parseColor("#FFFFFF")),
+            0,
+            name.length,
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        if (nameFont != null) {
+            spannable.setSpan(
+                CustomTypefaceSpan(nameFont),
+                0,
+                name.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+        }
+        spannable.setSpan(
+            ForegroundColorSpan(Color.parseColor("#C8C8C8")),
+            name.length,
+            fullText.length,
+            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        )
+        if (roleFont != null) {
+            spannable.setSpan(
+                CustomTypefaceSpan(roleFont),
+                name.length,
+                fullText.length,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+        }
+
+        employeeName.text = spannable
     }
 }
