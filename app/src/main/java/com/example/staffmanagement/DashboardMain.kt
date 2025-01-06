@@ -44,8 +44,8 @@ class DashboardMain : AppCompatActivity() {
         }
 
         val employeeName: TextView = findViewById(R.id.employee_name)
-        val name = "KASHMIRA BAVADIYA"
-        val role = "(UI/UX Designer)"
+        val name = "KRISHNAM MAVANI"
+        val role = "(Unity Developer)"
         val fullText = "$name\n$role"
 
         val spannable = SpannableString(fullText)
@@ -82,7 +82,6 @@ class DashboardMain : AppCompatActivity() {
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
             )
         }
-
         employeeName.text = spannable
     }
 }
