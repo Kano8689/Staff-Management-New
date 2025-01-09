@@ -25,9 +25,11 @@ class Login : AppCompatActivity() {
         _loginBtn.setOnClickListener{
             //validation of email and password
             this.startActivity(Intent(this,DashboardMain::class.java))
+            finish()
         }
         _registerBtn.setOnClickListener{
             this.startActivity(Intent(this,Register::class.java))
+            finish()
         }
 
         val _text = findViewById<TextView>(R.id.registrBtn)

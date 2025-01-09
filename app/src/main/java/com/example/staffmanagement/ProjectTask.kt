@@ -64,7 +64,6 @@ class ProjectTask : AppCompatActivity() {
             date.text = selectedDate
             day.text = dayName
         }
-
     }
     fun getMonthName(index: Int): MonthName? {
         return if (index in 1..12) MonthName.values()[index - 1] else null

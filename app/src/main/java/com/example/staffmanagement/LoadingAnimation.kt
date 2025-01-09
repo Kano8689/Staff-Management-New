@@ -25,8 +25,6 @@ class LoadingAnimation(
         {
             _context.startActivity(Intent(_context,Login::class.java))
         }
-
-
     }
 }
 
