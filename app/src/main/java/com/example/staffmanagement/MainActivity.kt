@@ -9,14 +9,24 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.staffmanagement.MainActivity.PrefrenceData._Editor
+import com.example.staffmanagement.MainActivity.PrefrenceData._SharedPreferences
 
 class MainActivity : AppCompatActivity()
 {
+    object PrefrenceData{
+        lateinit var _SharedPreferences: android.content.SharedPreferences
+        lateinit var _Editor: android.content.SharedPreferences.Editor
+    }
+
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        _SharedPreferences = getSharedPreferences("StaffManagement", MODE_PRIVATE)
+        _Editor = _SharedPreferences.edit()
 
         val _process = findViewById<ProgressBar>(R.id.loadingSlider)
         val textView = findViewById<TextView>(R.id.progrressValue)
@@ -46,6 +56,5 @@ class MainActivity : AppCompatActivity()
         )
         logoAnim.duration = 2000
         _logo.animation = logoAnim
-
     }
 }

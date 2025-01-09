@@ -7,6 +7,7 @@ import android.view.animation.Transformation
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import com.example.staffmanagement.MainActivity.PrefrenceData._SharedPreferences
 
 class LoadingAnimation(
     var _context:Context,
@@ -23,7 +24,14 @@ class LoadingAnimation(
 
         if(_value==_to)
         {
-            _context.startActivity(Intent(_context,Login::class.java))
+            if(_SharedPreferences.getBoolean("isLogin",false))
+            {
+                _context.startActivity(Intent(_context, DashboardMain::class.java))
+            }
+            else
+            {
+                _context.startActivity(Intent(_context, Login::class.java))
+            }
         }
     }
 }
