@@ -2,12 +2,13 @@ package com.example.staffmanagement
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import android.view.animation.Animation
 import android.view.animation.Transformation
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
-import com.example.staffmanagement.MainActivity.PrefrenceData._SharedPreferences
+import com.example.staffmanagement.MainActivity.PrefrenceDataObject._PrefrenceData
 
 class LoadingAnimation(
     var _context:Context,
@@ -24,7 +25,8 @@ class LoadingAnimation(
 
         if(_value==_to)
         {
-            if(_SharedPreferences.getBoolean("isLogin",false))
+            Log.d("Open Screen from Splash", "11-isLogin: "+(_PrefrenceData.getBoolean("isLogin",false)))
+            if(_PrefrenceData.getBoolean("isLogin",false))
             {
                 _context.startActivity(Intent(_context, DashboardMain::class.java))
             }

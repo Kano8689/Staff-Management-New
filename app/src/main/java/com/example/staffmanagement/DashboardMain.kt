@@ -44,8 +44,8 @@ class DashboardMain : AppCompatActivity() {
         }
 
         val employeeName: TextView = findViewById(R.id.employee_name)
-        val name = "KRISHNAM MAVANI"
-        val role = "(Unity Developer)"
+        val name = "KASHMIRA BAVADIYA"
+        val role = "(UI/UX Designer)"
         val fullText = "$name\n$role"
 
         val spannable = SpannableString(fullText)

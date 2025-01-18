@@ -1,32 +1,30 @@
 package com.example.staffmanagement
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.ProgressBar
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.staffmanagement.MainActivity.PrefrenceData._Editor
-import com.example.staffmanagement.MainActivity.PrefrenceData._SharedPreferences
+import com.example.staffmanagement.MainActivity.PrefrenceDataObject._PrefrenceData
+import com.example.staffmanagement.MainActivity.PrefrenceDataObject._Editor
 
 class MainActivity : AppCompatActivity()
 {
-    object PrefrenceData{
-        lateinit var _SharedPreferences: android.content.SharedPreferences
-        lateinit var _Editor: android.content.SharedPreferences.Editor
+    object PrefrenceDataObject
+    {
+        lateinit var _PrefrenceData : SharedPreferences
+        lateinit var _Editor : SharedPreferences.Editor
     }
-
     override fun onCreate(savedInstanceState: Bundle?)
     {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        _SharedPreferences = getSharedPreferences("StaffManagement", MODE_PRIVATE)
-        _Editor = _SharedPreferences.edit()
+        _PrefrenceData = getSharedPreferences("StaffManagement", MODE_PRIVATE)
+        _Editor = _PrefrenceData.edit()
 
         val _process = findViewById<ProgressBar>(R.id.loadingSlider)
         val textView = findViewById<TextView>(R.id.progrressValue)

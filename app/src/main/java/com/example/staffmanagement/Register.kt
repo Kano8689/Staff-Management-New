@@ -12,48 +12,50 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.staffmanagement.MainActivity.PrefrenceData._Editor
 
 class Register : AppCompatActivity() {
+    lateinit var _DBObject : DataBaseManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_register)
 
+        _DBObject = DataBaseManager(this)
 
-        val workDomain = findViewById<TextView>(R.id.workDomain)
-        val email = findViewById<TextView>(R.id.emailEditText)
-        val password = findViewById<TextView>(R.id.pswdEditText)
-        val cnfmPassword = findViewById<TextView>(R.id.cnfmPswdEditText)
+        val _WorkPlaceDomain = findViewById<TextView>(R.id.WorkPlace_Domain)
+        val _WorkPlaceName = findViewById<TextView>(R.id.WorkPlace_Name)
+        val _WorkPlaceEmail = findViewById<TextView>(R.id.WorkPlace_Email)
+        val _WorkPlacePassword = findViewById<TextView>(R.id.WorkPlace_Pswd)
+        val _WorkPlaceCnfmPassword = findViewById<TextView>(R.id.WorkPlace_CnfmPswd)
 
-        val _registerBtn = findViewById<TextView>(R.id.registrBtn)
-        val _loginBtn = findViewById<Button>(R.id.loginBtn)
-        _registerBtn.setOnClickListener{
-            //validation of email and password
 
-            if(workDomain.text!="" && email.text!="" && password.text!="" && cnfmPassword.text!="")
+        //on click register
+        findViewById<TextView>(R.id.registerBtn).setOnClickListener{
+            var workPlaceDomain:String = _WorkPlaceDomain.text.toString()
+            var workPlaceName:String = _WorkPlaceName.text.toString()
+            var workPlaceEmail:String = _WorkPlaceEmail.text.toString()
+            var workPlacePswd:String = _WorkPlacePassword.text.toString()
+            var workPlaceCnfmPswd:String = _WorkPlaceCnfmPassword.text.toString()
+
+            Log.d("Register Log", "Password: $workPlacePswd")
+            Log.d("Register Log", "Password: $workPlaceCnfmPswd")
+            Log.d("Register Log", "Password: "+(workPlacePswd.compareTo(workPlaceCnfmPswd)))
+            if(workPlacePswd.compareTo(workPlaceCnfmPswd) == 0)
             {
-                if(password.text.toString() == cnfmPassword.text.toString()) {
-                    _Editor.putString("WorkDomain", workDomain.text.toString())
-                    _Editor.putString("OrganizationName", email.text.toString())
-                    _Editor.putString("Password", password.text.toString())
-                    _Editor.apply()
+                if(_DBObject.RegisterCompny(workPlaceDomain, workPlaceName, workPlaceEmail, workPlacePswd))
+                {
                     this.startActivity(Intent(this, Login::class.java))
                     finish()
-                }
-                else
-                {
-                    Toast.makeText(this,"Password doesn't match", Toast.LENGTH_SHORT).show()
                 }
             }
             else
             {
-                Toast.makeText(this,"Please fill all the fields", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Password not matched",Toast.LENGTH_SHORT).show()
             }
         }
-        _loginBtn.setOnClickListener{
+
+        //on click login
+        findViewById<Button>(R.id.loginBtn).setOnClickListener{
             this.startActivity(Intent(this,Login::class.java))
             finish()
         }
@@ -68,7 +70,6 @@ class Register : AppCompatActivity() {
             22,
             Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
         )
-
         spannable.setSpan(
             ForegroundColorSpan(Color.parseColor("#0A2241")),
             23,

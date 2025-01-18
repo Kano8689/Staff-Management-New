@@ -6,57 +6,61 @@ import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ForegroundColorSpan
+import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.staffmanagement.MainActivity.PrefrenceData._SharedPreferences
+import com.example.staffmanagement.MainActivity.PrefrenceDataObject._Editor
+import com.example.staffmanagement.MainActivity.PrefrenceDataObject._PrefrenceData
 
 class Login : AppCompatActivity() {
+    lateinit var _DBObject : DataBaseManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_login)
 
-        val email = findViewById<TextView>(R.id.emailEditText)
-        val password = findViewById<TextView>(R.id.pswdEditText)
-        val domain = findViewById<TextView>(R.id.usernameEditText)
+        _DBObject = DataBaseManager(this)
 
-        val _loginBtn = findViewById<Button>(R.id.loginBtn)
-        val _registerBtn = findViewById<TextView>(R.id.registrBtn)
 
-        var wrkdmn = _SharedPreferences.getString("WorkDomain",null)
-        var orgnName = _SharedPreferences.getString("OrganizationName",null)
-        var pwd = _SharedPreferences.getString("Password",null)
-        _loginBtn.setOnClickListener{
-            if(orgnName!=null && pwd!=null && wrkdmn!=null)
+        val _WorkPlaceDomain = findViewById<TextView>(R.id.WorkPlace_Domain)
+        val _WorkPlaceName = findViewById<TextView>(R.id.WorkPlace_Name)
+        val _UserName = findViewById<TextView>(R.id.UserNameEnter)
+        val _UserPassword = findViewById<TextView>(R.id.PswdEnter)
+
+        //on click login
+        findViewById<TextView>(R.id.loginBtn).setOnClickListener{
+            var workPlaceDomain:String = _WorkPlaceDomain.text.toString()
+            var workPlaceName:String = _WorkPlaceName.text.toString()
+            var userName:String = _UserName.text.toString()
+            var userPassword:String = _UserPassword.text.toString()
+
+            var isAvail =  _DBObject.SelectData4Login(workPlaceDomain,workPlaceName,userName,userPassword)
+            if(isAvail)
             {
-                if(email.text==orgnName && password.text==pwd && domain.text==wrkdmn)
-                {
-                    _SharedPreferences.edit().putBoolean("isLogin", true).apply()
-                    this.startActivity(Intent(this,DashboardMain::class.java))
-                    finish()
-                }
-                else
-                {
-                    Toast.makeText(this,"Invalid Email or Password..1",Toast.LENGTH_SHORT).show()
-                }
+                Log.d("Open Screen from Login", "isLogin: "+(_PrefrenceData.getBoolean("isLogin",false)))
+                _Editor.putBoolean("isLogin",true)
+                _Editor.apply()
+                Log.d("Open Screen from Login", "isLogin: "+(_PrefrenceData.getBoolean("isLogin",false)))
+                Toast.makeText(this,"Login Successfully",Toast.LENGTH_SHORT).show()
+                this.startActivity(Intent(this, DashboardMain::class.java))
+                finish()
             }
             else
             {
-                Toast.makeText(this,"Invalid Email or Password..2",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,"Invalid Credentials",Toast.LENGTH_SHORT).show()
             }
         }
 
-        _registerBtn.setOnClickListener{
+        //on click rigister
+        findViewById<Button>(R.id.registerBtn).setOnClickListener{
             this.startActivity(Intent(this,Register::class.java))
             finish()
         }
 
-        val _text = findViewById<TextView>(R.id.registrBtn)
+        val _text = findViewById<TextView>(R.id.registerBtn)
         val fullText = "Don't you have an account?\nCreate an account"
         val spannable = SpannableString(fullText)
 

@@ -100,4 +100,25 @@
         app:layout_constraintTop_toBottomOf="@+id/calendarView" />
 
 
+    <TextView
+        android:id="@+id/TashHeading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="0dp"
+        android:layout_gravity="center"
+        android:text="  * TASK:\n"
+        android:fontFamily="@font/poppins_extrabold"
+        android:textSize="25dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/horiLine2" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:text="    - Create UI\n    - Eat Kitkat\n    - Play with child"
+        app:layout_constraintTop_toBottomOf="@+id/TashHeading" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,7 @@
     tools:context=".Register">
 
     <TextView
+        android:id="@+id/inputFieldParent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -20,109 +21,117 @@
         android:textColor="@color/black"
         android:textSize="30dp" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/domainEnter"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
         android:layout_marginBottom="10dp"
-        android:hint="Enter Workspace URL:"
-        android:layout_marginHorizontal="10dp"
-        app:endIconMode="clear_text">
+        android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/workDomain"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/WorkPlace_DomainEnter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/userNameEnter"
-            android:layout_alignBottom="@+id/userNameEnter"
-            android:layout_marginTop="250dp"
-            android:inputType="text"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginHorizontal="10dp"
+            android:hint="Enter Worksplace URL:"
+            app:endIconMode="clear_text">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/compnyName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/domainEnter"
-        android:layout_alignBottom="@+id/domainEnter"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="-80dp"
-        android:hint="Organization Name:"
-        android:layout_marginHorizontal="10dp"
-        app:endIconMode="clear_text">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/WorkPlace_Domain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/emailEditText"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/WorkPlace_NameEnter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="250dp"
-            android:inputType="text"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginHorizontal="10dp"
+            android:hint="Organization Name:"
+            app:endIconMode="clear_text">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/pswdEnter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/compnyName"
-        android:layout_alignBottom="@+id/compnyName"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="-80dp"
-        android:hint="Password:"
-        app:endIconMode="password_toggle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/WorkPlace_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/pswdEditText"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/WorkPlace_EmailEnter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="250dp"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginHorizontal="10dp"
+            android:hint="Organization Email:"
+            app:endIconMode="clear_text">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cnfmPswdEnter"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/pswdEnter"
-        android:layout_alignBottom="@+id/pswdEnter"
-        android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="-80dp"
-        android:hint="Confirm Password:"
-        app:endIconMode="password_toggle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/WorkPlace_Email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/cnfmPswdEditText"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/WorkPlace_PswdEnter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="250dp"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
+            android:layout_marginHorizontal="10dp"
+            android:hint="Password:"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/WorkPlace_Pswd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/WorkPlace_CnfmPswdEnter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:hint="Confirm Password:"
+            app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/WorkPlace_CnfmPswd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
 
     <Button
-        android:id="@+id/registrBtn"
+        android:id="@+id/registerBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/cnfmPswdEnter"
-        android:layout_alignBottom="@+id/cnfmPswdEnter"
-        android:layout_marginTop="140dp"
-        android:layout_marginBottom="-140dp"
+        android:layout_below="@+id/linearLayout"
         android:layout_marginHorizontal="80dp"
-        android:textAlignment="center"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#EBA208"
         android:fontFamily="sans-serif-medium"
         android:text="Register"
-        android:backgroundTint="#EBA208"
+        android:textAlignment="center"
         android:textColor="#0A2241"
-        android:textSize="25dp"/>
+        android:textSize="25dp" />
 
     <Button
         android:id="@+id/loginBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:layout_alignTop="@+id/registrBtn"
-        android:layout_alignBottom="@+id/registrBtn"
+        android:layout_alignTop="@+id/registerBtn"
+        android:layout_alignBottom="@+id/registerBtn"
         android:background="@android:color/transparent"
         android:layout_marginTop="60dp"
         android:layout_marginBottom="-70dp"
@@ -134,33 +143,6 @@
         android:textSize="15dp"
         android:textStyle="bold" />
 
-   <!-- <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="0dp"
-        android:layout_marginBottom="130dp"
-        android:orientation="horizontal"
-        android:padding="16dp">
 
-        <Button
-            android:id="@+id/googleLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10sp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:foreground="@drawable/google" />
-
-        <Button
-            android:id="@+id/faceBookLogin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="10sp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:foreground="@drawable/facebook" />
-    </LinearLayout>-->
 
 </RelativeLayout>
