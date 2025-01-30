@@ -14,7 +14,8 @@ router.post('/CompanyLogin', CompanyLogin);  //done
 router.post('/EmployeeRegister', EmployeeRegister);  //done
 router.post('/EmployeeLogin', EmployeeLogin);  //done
 router.post('/EmployeeProfile', EmployeeProfile);  //done
-router.post('/SelectAll', SelectAll);  //done
+ 
+router.get('/SelectAll', SelectAll); 
 
 router.post('/AddTask', AddTask);  //done
 router.post('/UpdateTask', UpdateTask);  //done
