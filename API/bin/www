@@ -17,8 +17,8 @@ mongoose.connect(cnctStr, {
 .then(() => console.log("Connected to MongoDB Atlas!"))
 .catch(err => console.error("MongoDB Connection Error:", err));
 
-//mongoose.connect('mongodb://127.0.0.1:27017/staff_management') //for localhost
-//mongoose.connect('mongodb://127.0.0.1:27017/staff_management')
+mongoose.connect('mongodb://127.0.0.1:27017/staff_management') //for localhost
+mongoose.connect('mongodb://127.0.0.1:27017/staff_management')
  // .then(() => console.log('Connected Database.., staff_management'));
 
 /**
