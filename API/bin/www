@@ -19,7 +19,7 @@ mongoose.connect(cnctStr, {
 
 //mongoose.connect('mongodb://127.0.0.1:27017/staff_management') //for localhost
 //mongoose.connect('mongodb://127.0.0.1:27017/staff_management')
-  .then(() => console.log('Connected Database.., staff_management'));
+  //.then(() => console.log('Connected Database.., staff_management'));
 
 /**
  * Get port from environment and store in Express.
