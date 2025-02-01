@@ -67,13 +67,13 @@ exports.EmployeeProfile = async (req, res) => {
 
 exports.SelectAll = async (req, res) => {
     try {
-        // const employees = await employeeModel.find();
+         const employees = await employeeModel.find();
 
-        // if (employees.length === 0) {
-        //     return res.status(404).json({
-        //         status: "No employees found"
-        //     });
-        // }
+         if (employees.length === 0) {
+             return res.status(404).json({
+                 status: "No employees found"
+             });
+          }
 
         res.status(200).json({
             status: "Employees retrieved successfully",
