@@ -39,6 +39,8 @@
 // });
 
 // module.exports = app;
+
+
 require("dotenv").config(); // Load environment variables
 var createError = require("http-errors");
 var express = require("express");
@@ -52,7 +54,7 @@ var usersRouter = require("./routes/users");
 
 var app = express();
 
-// ✅ MongoDB Connection (Ensure MongoDB Atlas is used)
+// ✅ Ensure MongoDB Connection Works
 const MONGO_URI =
   process.env.MONGO_URI ||
   "mongodb+srv://yourUser:yourPassword@cluster.mongodb.net/yourDatabase?retryWrites=true&w=majority";
@@ -61,6 +63,7 @@ mongoose
   .connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    serverSelectionTimeoutMS: 5000, // Fix MongoDB Timeout Issue
   })
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("❌ MongoDB Connection Error:", err));
