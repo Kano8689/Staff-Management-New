@@ -37,7 +37,7 @@
         android:layout_marginTop="88dp"
         android:layout_toEndOf="@+id/profile_pic"
         android:fontFamily="@font/poppins_bold"
-        android:text="KASHMIRA BAVADIYA\n(UI/UX Designer)"
+        android:text="JEREMIAH JOHNSON\n(Software Developer)"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:textStyle="bold"/>
