@@ -20,7 +20,7 @@ const mongoose = require('mongoose');
 //mongoose.connect('mongodb://127.0.0.1:27017/staff_management') //for localhost
 
 const cnctStr = "mongodb+srv://staff_manager:<staffmanager123>@cluster0.pqzy0.mongodb.net/";
-mongoose.connect('mongodb://cnctStr/staff_management')
+mongoose.connect('mongodb://'+cnctStr+'/staff_management')
   .then(() => console.log('Connected Database.., staff_management'));
 
 /**
