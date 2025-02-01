@@ -90,6 +90,34 @@ exports.SelectAll = async (req, res) => {
 };
 
 
+
+
+exports.index = async (req, res) => {
+    try {
+        // const employees = await employeeModel.find();
+
+        // if (employees.length === 0) {
+        //     return res.status(404).json({
+        //         status: "No employees found"
+        //     });
+        // }
+
+        res.status(200).json({
+            status: "Employees retrieved successfully",
+            data: "Hello world"
+        });
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({
+            status: "Server error",
+            error: err.message
+        });
+    }
+};
+
+
+
 // exports.EmployeeProfile = async(req,res)=>{
 //     var data = await employeeModel.find({"_id":req.body.id});
 //     res.status(200).json({
