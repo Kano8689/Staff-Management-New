@@ -77,7 +77,7 @@ exports.SelectAll = async (req, res) => {
 
         res.status(200).json({
             status: "Employees retrieved successfully",
-            data: "Hello world"
+            data: employees
         });
 
     } catch (err) {
