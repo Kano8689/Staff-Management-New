@@ -17,7 +17,7 @@ exports.EmployeeLogin = async (req, res) => {
     // var check_login = await storage.getItem('employee_id');
     // var check_login = await storage.getItem('employee_id');
 
-    // if (check_login == undefined) 
+    //if (check_login == undefined) 
     {
         var data = await employeeModel.find({ "employeeEmail": email, "employeePassword": password, "workSpaceURL": domain });
         if (data.length != 0) {
@@ -94,14 +94,6 @@ exports.SelectAll = async (req, res) => {
 
 exports.index = async (req, res) => {
     try {
-        // const employees = await employeeModel.find();
-
-        // if (employees.length === 0) {
-        //     return res.status(404).json({
-        //         status: "No employees found"
-        //     });
-        // }
-
         res.status(200).json({
             status: "Employees retrieved successfully",
             data: "Hello world"
@@ -114,6 +106,29 @@ exports.index = async (req, res) => {
             error: err.message
         });
     }
+};
+exports.SelectAll1 = async (req, res) => {
+    try {
+        const employees = await employeeModel.find();
+
+        if (employees.length === 0) {
+            return res.status(404).json({
+                status: "No employees found"
+            });
+         }
+
+       res.status(200).json({
+           status: "Employees retrieved successfully",
+           data: employees
+       });
+
+   } catch (err) {
+       console.error(err);
+       res.status(500).json({
+           status: "Server error",
+           error: err.message
+       });
+   }
 };
 
 

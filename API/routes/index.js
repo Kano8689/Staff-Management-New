@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var { CompanyRegister, CompanyLogin } = require('../controller/companyController');
-var { EmployeeRegister, EmployeeLogin, EmployeeProfile, SelectAll,index } = require('../controller/employeeController');
+var { EmployeeRegister, EmployeeLogin, EmployeeProfile, SelectAll, index, SelectAll1 } = require('../controller/employeeController');
 var { AddTask, UpdateTask, DeleteTask, SelectTask } = require('../controller/taskHandelController');
 var { UpdateAttedence, SelectAttedence } = require('../controller/attedenceReportController');
 var { CreateTeam, UpdateTeam, SelectTeam } = require('../controller/teamDetailsController');
@@ -16,6 +16,7 @@ router.post('/EmployeeLogin', EmployeeLogin);  //done
 router.post('/EmployeeProfile', EmployeeProfile);  //done
 router.post('/SelectAll', SelectAll);
 
+router.get('/SelectAll1', SelectAll1);
 router.get('/index', index);
 
 router.post('/AddTask', AddTask);  //done
