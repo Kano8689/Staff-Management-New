@@ -9,19 +9,32 @@ var debug = require('debug')('api:server');
 var http = require('http');
 const mongoose = require('mongoose');
 
-//const cnctStr = "mongodb://atlas-sql-679c5077667eb534136386c0-pqzy0.a.query.mongodb.net/staff_management?ssl=true&authSource=admin";
-//mongoose.connect(cnctStr, {
-  //  useNewUrlParser: true,
-   // useUnifiedTopology: true,
-//})
-//.then(() => console.log("Connected to MongoDB Atlas!"))
-//.catch(err => console.error("MongoDB Connection Error:", err));
+
+
+//#####################################################################################################################################\\
 
 //mongoose.connect('mongodb://127.0.0.1:27017/staff_management') //for localhost
+// const cnctStr = "mongodb+srv://staff_manager:<staffmanager123>@cluster0.pqzy0.mongodb.net/";
+// mongoose.connect('mongodb://'+cnctStr+'staff_management')
+//   .then(() => console.log('Connected Database.., staff_management'));
 
-const cnctStr = "mongodb+srv://staff_manager:<staffmanager123>@cluster0.pqzy0.mongodb.net/";
-mongoose.connect('mongodb://mongodb+srv://staff_manager:<staffmanager123>@cluster0.pqzy0.mongodb.net/staff_management')
-  .then(() => console.log('Connected Database.., staff_management'));
+const cnctStr = "mongodb+srv://staff_manager:staffmanager123@cluster0.pqzy0.mongodb.net/staff_management?retryWrites=true&w=majority";
+mongoose.connect(cnctStr, { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true 
+})
+  .then(() => console.log('Connected to Database: staff_management'))
+  .catch(err => console.error('Database Connection Error:', err));
+
+
+
+
+
+
+//#####################################################################################################################################\\
+
+
+
 
 /**
  * Get port from environment and store in Express.
