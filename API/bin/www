@@ -13,22 +13,10 @@ const mongoose = require('mongoose');
 
 //#####################################################################################################################################\\
 
-//mongoose.connect('mongodb://127.0.0.1:27017/staff_management') //for localhost
-// const cnctStr = "mongodb+srv://staff_manager:<staffmanager123>@cluster0.pqzy0.mongodb.net/";
-// mongoose.connect('mongodb://'+cnctStr+'staff_management')
-//   .then(() => console.log('Connected Database.., staff_management'));
-
-const cnctStr = "mongodb+srv://staff_manager:staffmanager123@cluster0.pqzy0.mongodb.net/staff_management?retryWrites=true&w=majority";
-mongoose.connect(cnctStr, { 
-  useNewUrlParser: true, 
-  useUnifiedTopology: true 
-})
-  .then(() => console.log('Connected to Database: staff_management'))
-  .catch(err => console.error('Database Connection Error:', err));
-
-
-
-
+// const cnctStr = "mongodb+srv://staff_manager:staffclg123@cluster0.pqzy0.mongodb.net/";
+// const cnctStr = "127.0.0.1:27017/";
+mongoose.connect('mongodb+srv://staff_manager:staffclg123@cluster0.pqzy0.mongodb.net/staff_management') //for localhost
+  .then(() => console.log('Connected Database.., staff_management'));
 
 
 //#####################################################################################################################################\\
